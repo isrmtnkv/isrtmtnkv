@@ -8,7 +8,7 @@
       name="description"
       content="Портфолио Сыромятникова Игоря Романовича — performance / growth-маркетолога с кейсами, опытом и материалами."
     />
-    <link rel="stylesheet" href="./styles.css?v=13" />
+    <link rel="stylesheet" href="./styles.css?v=14" />
   </head>
   <body>
     <button class="mobile-menu-button glass" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-toggle>
@@ -434,6 +434,7 @@
       const revealItems = document.querySelectorAll(".reveal, .case-panel, .info-card");
       const menuToggle = document.querySelector("[data-menu-toggle]");
       const menuBackdrop = document.querySelector("[data-menu-backdrop]");
+      const menuMediaQuery = window.matchMedia("(max-width: 980px)");
 
       const closeMobileMenu = () => {
         document.body.classList.remove("menu-open");
@@ -441,6 +442,7 @@
       };
 
       const toggleMobileMenu = () => {
+        if (!menuMediaQuery.matches) return;
         const open = document.body.classList.toggle("menu-open");
         menuToggle?.setAttribute("aria-expanded", String(open));
       };
@@ -475,19 +477,26 @@
       };
 
       langButtons.forEach((button) => {
-        button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+        button.addEventListener("click", () => {
+          applyLanguage(button.dataset.lang);
+          if (menuMediaQuery.matches) closeMobileMenu();
+        });
       });
 
       menuToggle?.addEventListener("click", toggleMobileMenu);
       menuBackdrop?.addEventListener("click", closeMobileMenu);
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 980) closeMobileMenu();
+      document.querySelectorAll(".side-nav a, .side-nav button").forEach((item) => {
+        item.addEventListener("click", () => {
+          if (menuMediaQuery.matches && item !== menuToggle) closeMobileMenu();
         });
       });
 
       window.addEventListener("keydown", (event) => {
         if (event.key === "Escape") closeMobileMenu();
+      });
+
+      menuMediaQuery.addEventListener("change", (event) => {
+        if (!event.matches) closeMobileMenu();
       });
 
       const sectionObserver = new IntersectionObserver(
