@@ -1,0 +1,46 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DCC198"/>
+      <stop offset="0.34" stop-color="#BFD0C0"/>
+      <stop offset="0.68" stop-color="#7FA07B"/>
+      <stop offset="1" stop-color="#537353"/>
+    </linearGradient>
+    <linearGradient id="mountainBack" x1="800" y1="250" x2="800" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8BA189"/>
+      <stop offset="1" stop-color="#557159"/>
+    </linearGradient>
+    <linearGradient id="mountainMid" x1="800" y1="360" x2="800" y2="860" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#708967"/>
+      <stop offset="1" stop-color="#3F5C40"/>
+    </linearGradient>
+    <linearGradient id="field" x1="800" y1="700" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7A9A55"/>
+      <stop offset="0.5" stop-color="#52773B"/>
+      <stop offset="1" stop-color="#2D4928"/>
+    </linearGradient>
+    <filter id="blur1" x="-40" y="-40" width="1680" height="1280" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+
+  <g filter="url(#blur1)" opacity="0.55">
+    <ellipse cx="330" cy="140" rx="240" ry="110" fill="#F4E9CA"/>
+    <ellipse cx="1250" cy="180" rx="300" ry="140" fill="#D7E6D1"/>
+  </g>
+
+  <path d="M0 560C130 505 195 505 313 446C432 386 494 408 596 347C689 291 795 308 894 356C1003 409 1039 394 1165 448C1289 502 1394 505 1600 470V1200H0V560Z" fill="url(#mountainBack)" opacity="0.9"/>
+  <path d="M0 650C122 593 209 606 303 535C409 455 509 478 611 412C739 329 867 361 987 445C1091 519 1173 542 1297 598C1387 639 1463 650 1600 627V1200H0V650Z" fill="url(#mountainMid)"/>
+  <path d="M0 755C131 706 234 681 360 710C499 741 579 704 700 664C844 616 996 624 1103 684C1239 761 1348 780 1600 722V1200H0V755Z" fill="url(#field)"/>
+
+  <path d="M0 844C121 814 209 786 312 808C428 832 549 793 674 750C822 700 923 724 1049 782C1175 840 1299 851 1600 806V1200H0V844Z" fill="#456536" opacity="0.92"/>
+  <path d="M0 924C143 870 255 874 388 901C525 929 649 888 799 826C924 774 1037 785 1166 858C1290 929 1393 942 1600 900V1200H0V924Z" fill="#35562C"/>
+
+  <g opacity="0.2">
+    <path d="M0 966C120 922 212 914 330 948C466 986 555 972 656 923C786 860 886 863 1019 935C1156 1008 1294 1022 1600 975" stroke="#D9F18E" stroke-width="14"/>
+    <path d="M0 1031C162 978 281 985 415 1029C554 1076 663 1045 803 982C932 925 1069 939 1205 1008C1335 1075 1455 1086 1600 1049" stroke="#A5D05B" stroke-width="10"/>
+    <path d="M0 1107C149 1073 274 1087 411 1120C566 1157 691 1134 835 1082C970 1033 1091 1048 1218 1094C1345 1140 1462 1144 1600 1116" stroke="#D6F09E" stroke-width="8"/>
+  </g>
+</svg>
